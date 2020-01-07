@@ -52,3 +52,26 @@ var homme3 = {
 console.log( 'Objet sans constructeur ------')
 console.log( homme3)
 afficherPersonne( homme3)
+
+
+
+function Client( nom, prenom, pseudo, numeroClient) {
+    //this.personne  = new Personne( nom, prenom, pseudo) 
+    Personne.call( this, nom, prenom, pseudo)
+
+    this.numeroClient = numeroClient ;
+
+    this.getInfos = function(){
+        //return this.numeroClient + ' ' + this.personne.nom + ' ' +  this.personne.prenom
+        return this.numeroClient + ' ' + this.nom + ' ' +  this.prenom
+    }
+}
+
+var client1 = new Client( 'LUCAS', 'JulStevees', 'steve44', 'A01');
+
+console.log( 'Héritage via constructeur  ------')
+console.log( client1)
+//afficherPersonne( client1.personne)
+afficherPersonne( client1)
+console.log(  client1.numeroClient)
+console.log(  client1.getInfos())
