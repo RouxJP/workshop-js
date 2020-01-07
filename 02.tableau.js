@@ -59,14 +59,15 @@ villesSansTiretSansEspace.forEach( afficher)
 function villeAvecSAlaFin( element){
     //console.log(  element.indexOf( '-') );
     var length = element.length ;
-    if( element[ length - 1] == 's'){
-        return element;
+    if( element[ length - 1].toUpperCase() == 'S'){
+        elementMaj = element.toUpperCase();
+        return elementMaj;
     }else{
         return null;
     }
 }
 
-var villesSansTiretSansEspace = villes.filter( villeAvecSAlaFin)
+var villesAvecS = villes.filter( villeAvecSAlaFin)
 
 console.log('liste des villes avec s final')
-villesSansTiretSansEspace.forEach( afficher)
+villesAvecS.forEach( afficher)
